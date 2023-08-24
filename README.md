@@ -84,7 +84,7 @@ Download and copy custom profile to Powershell profile directory
 > Profile copied from <https://thirty25.com/posts/2021/12/optimizing-your-powershell-load-times>
 
 ```console
-Invoke-WebRequest -Uri "https://github.com/tahmidul612/pwsh-config/raw/master/profile.ps1" -OutFile "$PROFILE"
+iwr -uri "https://github.com/tahmidul612/pwsh-config/raw/master/profile.ps1" -outfile "$PROFILE"
 ```
 
 Reload profile to enable the theme and modules
