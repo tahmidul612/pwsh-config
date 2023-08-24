@@ -69,7 +69,7 @@ Import-Module PSReadLine
 Install [fzf](https://github.com/junegunn/fzf), [psfzf](https://github.com/kelleyma49/PSFzf) and [terminal-icons](https://github.com/devblackops/Terminal-Icons)
 
 ```console
-scoop add bucket extras
+scoop bucket add extras
 scoop install fzf psfzf terminal-icons
 ```
 
