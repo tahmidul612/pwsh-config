@@ -65,12 +65,15 @@ Import-Module PSReadLine
 ```
 
 > Importing PSReadline is required to install psfzf
+>
+> Install psfzf after installing fzf or the install/import may fail
 
 Install [fzf](https://github.com/junegunn/fzf), [psfzf](https://github.com/kelleyma49/PSFzf) and [terminal-icons](https://github.com/devblackops/Terminal-Icons)
 
 ```console
 scoop bucket add extras
-scoop install fzf psfzf terminal-icons
+scoop install fzf terminal-icons
+scoop install psfzf
 ```
 
 Install [ZLocation](https://github.com/vors/ZLocation)
