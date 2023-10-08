@@ -119,4 +119,9 @@ Using `$env:POSH_THEMES_PATH` in the profile.ps1 file may cause a delay in loadi
 
 > Replaces the environment variable with the absolute path
 
+### [Faster Terminal-Icons](./mods/faster-terminal-icons.md)[^2]
+
+The terminal-icons module can take a while to load. This is a guide to modify the module to make it load 3x+ faster
+
 [^1]: <https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands>
+[^2]: <https://github.com/devblackops/Terminal-Icons/issues/76>
