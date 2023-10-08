@@ -28,4 +28,4 @@ if ($error) {
 Import-Module -Name Terminal-Icons
 Write-Output ("`n" + '$userThemeData,$colorSequences,$glyphs|Export-Clixml -Path "$moduleRoot/Data/Data.xml"') | Add-Content -Path (Get-Module Terminal-Icons).Path
 Import-Module -Name Terminal-Icons
-Invoke-WebRequest -uri "https://github.com/tahmidul612/pwsh-config/raw/master/mods/Terminal-Icons.psm1" -outfile "(Get-Module Terminal-Icons).Path"
+Invoke-WebRequest -uri "https://github.com/tahmidul612/pwsh-config/raw/master/mods/Terminal-Icons.psm1" -outfile "$((Get-Module Terminal-Icons).Path)"
