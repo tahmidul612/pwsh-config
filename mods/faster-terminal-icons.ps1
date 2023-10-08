@@ -10,7 +10,10 @@
 
 $error.clear()
 try {
-    Import-Module -Name Terminal-Icons -ErrorAction Stop
+    $import = pwsh.exe -NoProfile -Command { Import-Module -Name Terminal-Icons; } 2>&1
+    if ($import) {
+        throw $import
+    }
 }
 catch {
     Write-Error "Terminal-Icons module not found."
@@ -25,7 +28,7 @@ if ((Test-Path -Path "$(Split-Path -Parent (Get-Module Terminal-Icons).Path)/Dat
 if ($error) {
     exit
 }
-Import-Module -Name Terminal-Icons
+pwsh.exe -NoProfile -Command { Import-Module -Name Terminal-Icons; }
 Write-Output ("`n" + '$userThemeData,$colorSequences,$glyphs|Export-Clixml -Path "$moduleRoot/Data/Data.xml"') | Add-Content -Path (Get-Module Terminal-Icons).Path
-Import-Module -Name Terminal-Icons
+pwsh.exe -NoProfile -Command { Import-Module -Name Terminal-Icons; }
 Invoke-WebRequest -uri "https://github.com/tahmidul612/pwsh-config/raw/master/mods/Terminal-Icons.psm1" -outfile "$((Get-Module Terminal-Icons).Path)"
