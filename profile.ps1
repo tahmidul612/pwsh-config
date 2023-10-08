@@ -28,7 +28,7 @@ LoadStep "Terminal-Icons" {
 }
 LoadStep "Posh Theme" {
     $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/multiverse-neon.omp.json" | Invoke-Expression
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\multiverse-neon.omp.json" | Invoke-Expression
 }
 # scoop-search-multisource hook
 function scoop {
