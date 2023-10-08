@@ -41,14 +41,6 @@ Install oh-my-posh with winget
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
-Add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
-
-> Executable location
-
-```console
-(Get-Command oh-my-posh).Source
-```
-
 > Restart terminal to enable oh-my-posh command alias
 
 Disable oh-my-posh notices
@@ -91,7 +83,7 @@ scoop install "https://raw.githubusercontent.com/plicit/scoop-search-multisource
 
 Download and copy custom profile to Powershell profile directory
 
-> Profile copied from <https://thirty25.com/posts/2021/12/optimizing-your-powershell-load-times>
+> Profile is a modified version of <https://thirty25.com/posts/2021/12/optimizing-your-powershell-load-times>
 
 ```console
 iwr -uri "https://github.com/tahmidul612/pwsh-config/raw/master/profile.ps1" -outfile "$PROFILE"
@@ -102,3 +94,29 @@ Reload profile to enable the theme and modules
 ```console
 . $PROFILE
 ```
+
+---
+
+## Optional Modifications
+
+### Windows Defender Exclusion[^1]
+
+Defender scans may be slowing down oh-my-posh, add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
+
+> Executable location
+
+```console
+(Get-Command oh-my-posh).Source
+```
+
+### Path Substitution Fix
+
+Using `$env:POSH_THEMES_PATH` in the profile.ps1 file may cause a delay in loading the profile. This is a fix for that:
+
+```console
+(Get-Content -Path $PROFILE).Replace('$env:POSH_THEMES_PATH', "$($env:POSH_THEMES_PATH)") | Set-Content $PROFILE
+```
+
+> Replaces the environment variable with the absolute path
+
+[^1]: <https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands>
