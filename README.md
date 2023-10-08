@@ -82,6 +82,13 @@ Install [ZLocation](https://github.com/vors/ZLocation)
 Install-Module ZLocation -Scope CurrentUser
 ```
 
+Install [scoop-search-multisource](https://github.com/plicit/scoop-search-multisource)
+> For searching scoop directory waaaaay faster than the built in scoop search
+
+```console
+scoop install "https://raw.githubusercontent.com/plicit/scoop-search-multisource/master/scoop-search-multisource.json"
+```
+
 Download and copy custom profile to Powershell profile directory
 
 > Profile copied from <https://thirty25.com/posts/2021/12/optimizing-your-powershell-load-times>
