@@ -1,11 +1,32 @@
 # Setup Powershell
 
+- [Powershell Preview](#powershell-preview)
+- [Scoop](#scoop)
+- [Nerd Font](#nerd-font)
+- [Configure Terminal](#configure-terminal)
+- [oh-my-posh](#oh-my-posh)
+- [Optional Modifications](#optional-modifications)
+  - [Windows Defender Exclusion^1](#windows-defender-exclusion1)
+  - [Path Substitution Fix](#path-substitution-fix)
+  - [Faster Terminal-Icons^2](#faster-terminal-icons2)
+
 ## Powershell Preview
 
 Install powershell preview with winget
 
 ```console
 winget install --id Microsoft.Powershell.Preview --source winget
+```
+
+## [Scoop](https://scoop.sh/)
+
+Scoop is a package manager for Windows. It installs packages only for the current user (does not need admin privileges) and adds command line alias for the package when needed. The terminal does not have to be restarted to use the alias.
+
+> Run these commands in a non-elevated powershell/terminal (regular powershell without admin privileges)
+
+```console
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+iwr -useb get.scoop.sh | iex
 ```
 
 ## Nerd Font
