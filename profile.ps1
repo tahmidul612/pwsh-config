@@ -26,6 +26,11 @@ LoadStep "PSFzf" {
 LoadStep "Terminal-Icons" {
     Import-Module -Name Terminal-Icons
 }
+
+LoadStep "gsudo" {
+    Import-Module gsudoModule
+}
+
 LoadStep "Posh Theme" {
     $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
     oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\multiverse-neon.omp.json" | Invoke-Expression

@@ -60,12 +60,13 @@ Import-Module PSReadLine
 >
 > Install psfzf after installing fzf or the install/import may fail
 
-Install [fzf](https://github.com/junegunn/fzf), [psfzf](https://github.com/kelleyma49/PSFzf) and [terminal-icons](https://github.com/devblackops/Terminal-Icons)
+Install [fzf](https://github.com/junegunn/fzf), [psfzf](https://github.com/kelleyma49/PSFzf), [terminal-icons](https://github.com/devblackops/Terminal-Icons) and [gsudo](<https://github.com/gerardog/gsudo>)
 
 ```console
 scoop bucket add extras
 scoop install fzf terminal-icons
 scoop install psfzf
+scoop install gsudo
 ```
 
 Install [ZLocation](https://github.com/vors/ZLocation)
