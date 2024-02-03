@@ -125,10 +125,18 @@ Reload profile to enable the theme and modules
 
 Defender scans may be slowing down oh-my-posh, add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
 
-> Executable location
+> OMP Executable location
 
 ```console
 (Get-Command oh-my-posh).Source
+```
+
+Adding entire the scoop directory, or possibly just the modules directory to the exclusion list may also help
+
+> Scoop directory location
+
+```console
+echo $env:USERPROFILE\scoop
 ```
 
 ### Path Substitution Fix
