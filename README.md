@@ -3,6 +3,7 @@
 - [Powershell Preview](#powershell-preview)
 - [Scoop](#scoop)
 - [Nerd Font](#nerd-font)
+- [Update Default Shell](#update-default-shell)
 - [Configure Terminal](#configure-terminal)
 - [oh-my-posh](#oh-my-posh)
 - [Optional Modifications](#optional-modifications)
@@ -38,12 +39,20 @@ scoop bucket add nerd-fonts
 scoop install FiraCode-NF-Mono
 ```
 
+## Update Default Shell
+
+- Restart terminal
+- Open terminal settings
+- Change `Default profile` from `Windows Powershell` to `Powershell`
+
+> You default profile may be different, change it to `Powershell` or `Powershell Preview`
+
 ## Configure Terminal
 
 - Open terminal settings
 - Open JSON File
 - Copy and paste this [Night Owl Theme](https://github.com/edurojasr/Windows-Terminal-Night-Owl-Theme/blob/master/schemes.json) into the schemes section
-- Navigate to the Powershell Preview profile
+- Navigate to the `Powershell` profile
 - Set the *Starting Directory*
 - Navigate to **Powershell > Appearance**
 - Set *Color Scheme* to Night Owl
