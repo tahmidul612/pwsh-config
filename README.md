@@ -7,7 +7,7 @@
 - [Configure Terminal](#configure-terminal)
 - [oh-my-posh](#oh-my-posh)
 - [Optional Modifications](#optional-modifications)
-  - [Windows Defender Exclusion^1](#windows-defender-exclusion1)
+  - [Windows Security Exclusion^1](#windows-security-exclusion1)
   - [Path Substitution Fix](#path-substitution-fix)
   - [Faster Terminal-Icons^2](#faster-terminal-icons2)
 
@@ -130,9 +130,9 @@ Reload profile to enable the theme and modules
 
 ## Optional Modifications
 
-### Windows Defender Exclusion[^1]
+### Windows Security Exclusion[^1]
 
-Defender scans may be slowing down oh-my-posh, add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
+Security scans may be slowing down oh-my-posh, add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
 
 > OMP Executable location
 
