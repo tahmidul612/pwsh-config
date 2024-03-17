@@ -133,7 +133,7 @@ Reload profile to enable the theme and modules
 
 ### Disable daily update check
 
-The provided profile has a function to check winget and scoop for updates once every day. This can be disabled by commenting out `line 81` in the profile.ps1 file
+The provided profile has a function to check winget and scoop for updates once every day. This can be disabled by commenting out [line 81](./profile.ps1#L81) in the profile.ps1 file
 > Update check can be skipped by Ctrl+C, it will not check again that day
 
 ### Windows Security Exclusion[^1]
