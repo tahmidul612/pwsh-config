@@ -56,11 +56,11 @@ function update-check {
     Invoke-Expression "scoop update *>&1" | Out-Null
     Invoke-Expression "scoop status *>&1" -OutVariable scoop | Out-Null
     if (($winget -like "*No installed package found matching input criteria.*") -and ($scoop -like "*Everything is ok!*")) {
-        Write-Host "`rNo updates available   " -ForegroundColor Green -NoNewline
+        Write-Host "`rNo updates available   " -ForegroundColor Green
     }
     else {
-        Write-Host "`rUpdates available      " -ForegroundColor Yellow -NoNewline
-        Write-Host "`nRun 'update-all' to update all packages" -ForegroundColor Gray
+        Write-Host "`rUpdates available      " -ForegroundColor Yellow
+        Write-Host "Run 'update-all' to update all packages" -ForegroundColor Gray
     }
     $ErrorActionPreference = $ErrorActionPreference_bak
 }
