@@ -7,6 +7,7 @@
 - [Configure Terminal](#configure-terminal)
 - [oh-my-posh](#oh-my-posh)
 - [Optional Modifications](#optional-modifications)
+  - [Disable daily update check](#disable-daily-update-check)
   - [Windows Security Exclusion^1](#windows-security-exclusion1)
   - [Path Substitution Fix](#path-substitution-fix)
   - [Faster Terminal-Icons^2](#faster-terminal-icons2)
@@ -129,6 +130,11 @@ Reload profile to enable the theme and modules
 ---
 
 ## Optional Modifications
+
+### Disable daily update check
+
+The provided profile has a function to check winget and scoop for updates once every day. This can be disabled by commenting out `line 81` in the profile.ps1 file
+> Update check can be skipped by Ctrl+C, it will not check again that day
 
 ### Windows Security Exclusion[^1]
 
