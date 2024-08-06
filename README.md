@@ -16,6 +16,8 @@
 
 Install powershell preview with winget
 
+> Update `app installer` from Microsoft store if the install command does not work
+
 ```console
 winget install --id Microsoft.Powershell.Preview --source winget
 ```
