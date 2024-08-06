@@ -33,6 +33,16 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 iwr -useb get.scoop.sh | iex
 ```
 
+## Git
+
+Install git (required for some scoop commands)
+
+> For a full git setup follow [git-config](https://gist.github.com/tahmidul612/b0aa70aaf128309a0c156cd2dcf6d4bb)
+
+```console
+winget install git.git
+```
+
 ## Nerd Font
 
 Install FiraCode Nerd Font with scoop
