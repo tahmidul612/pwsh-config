@@ -85,3 +85,9 @@ function update-all {
     winget update --all;
     scoop update --all;
 }
+
+# Cleanup scoop
+function scoopClean {
+    scoop cleanup *;
+    scoop cache rm *;
+}
