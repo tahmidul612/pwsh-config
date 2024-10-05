@@ -1,4 +1,5 @@
 # Faster Terminal-Icons
+
 <!--start-->
 >[Possible improvements of load time #76](<https://github.com/devblackops/Terminal-Icons/issues/76>)
 
