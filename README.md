@@ -12,6 +12,7 @@
   - [Path Substitution Fix](#path-substitution-fix)
   - [Faster Terminal-Icons^2](#faster-terminal-icons2)
 
+<!--start-->
 ## Powershell Preview
 
 Install powershell preview with winget
@@ -182,3 +183,4 @@ The terminal-icons module can take a while to load. This is a guide to modify th
 
 [^1]: <https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands>
 [^2]: <https://github.com/devblackops/Terminal-Icons/issues/76>
+<!--end-->
