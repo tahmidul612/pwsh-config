@@ -1,7 +1,6 @@
 # Faster Terminal-Icons
-
->[Possible improvements of load time #76
-](<https://github.com/devblackops/Terminal-Icons/issues/76>)
+<!--start-->
+>[Possible improvements of load time #76](<https://github.com/devblackops/Terminal-Icons/issues/76>)
 
 ## Auto
 
@@ -34,3 +33,4 @@ iwr -uri "https://github.com/tahmidul612/pwsh-config/raw/master/mods/Terminal-Ic
 ```
 
 > Use diff or check the [github issue](<https://github.com/devblackops/Terminal-Icons/issues/76>) for the changes made to the file
+<!--end-->
