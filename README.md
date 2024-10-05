@@ -2,15 +2,16 @@
 
 - [Powershell Preview](#powershell-preview)
 - [Scoop](#scoop)
+- [Git](#git)
 - [Nerd Font](#nerd-font)
 - [Update Default Shell](#update-default-shell)
 - [Configure Terminal](#configure-terminal)
 - [oh-my-posh](#oh-my-posh)
 - [Optional Modifications](#optional-modifications)
   - [Disable daily update check](#disable-daily-update-check)
-  - [Windows Security Exclusion^1](#windows-security-exclusion1)
+  - [Windows Security Exclusion](#windows-security-exclusion)
   - [Path Substitution Fix](#path-substitution-fix)
-  - [Faster Terminal-Icons^2](#faster-terminal-icons2)
+  - [Faster Terminal-Icons](#faster-terminal-icons)
 
 <!--start-->
 ## Powershell Preview
@@ -146,10 +147,12 @@ Reload profile to enable the theme and modules
 
 ### Disable daily update check
 
-The provided profile has a function to check winget and scoop for updates once every day. This can be disabled by commenting out [line 81](./profile.ps1#L81) in the profile.ps1 file
+The provided profile has a function to check winget and scoop for updates once every day. This can be disabled by commenting out [line 81](https://github.com/tahmidul612/pwsh-config/blob/32e2c4137d2ea5b4fe108536e11dba3c5d92d636/profile.ps1#L81) in the profile.ps1 file
 > Update check can be skipped by Ctrl+C, it will not check again that day
 
-### Windows Security Exclusion[^1]
+### Windows Security Exclusion
+
+> Check <https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands> for more information
 
 Security scans may be slowing down oh-my-posh, add oh-my-posh executable to Windows Defender exclusion list (or the exclusion list for you antivirus)
 
@@ -177,10 +180,9 @@ Using `$env:POSH_THEMES_PATH` in the profile.ps1 file may cause a delay in loadi
 
 > Replaces the environment variable with the absolute path
 
-### [Faster Terminal-Icons](./mods/faster-terminal-icons.md)[^2]
+### [Faster Terminal-Icons](./mods/faster-terminal-icons.md)
+
+> Check <https://github.com/devblackops/Terminal-Icons/issues/76> for more information
 
 The terminal-icons module can take a while to load. This is a guide to modify the module to make it load 3x+ faster
-
-[^1]: <https://ohmyposh.dev/docs/faq#the-prompt-is-slow-delay-in-showing-the-prompt-between-commands>
-[^2]: <https://github.com/devblackops/Terminal-Icons/issues/76>
 <!--end-->
