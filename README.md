@@ -8,6 +8,7 @@
 - [Configure Terminal](#configure-terminal)
 - [oh-my-posh](#oh-my-posh)
 - [Optional Modifications](#optional-modifications)
+  - [Gsudo modifications](#gsudo-modifications)
   - [Enable daily update check](#enable-daily-update-check)
   - [Windows Security Exclusion](#windows-security-exclusion)
   - [Path Substitution Fix](#path-substitution-fix)
@@ -144,6 +145,24 @@ Reload profile to enable the theme and modules
 ---
 
 ## Optional Modifications
+
+### Gsudo modifications
+
+- Allow gsudo to cache credentials
+
+  > <https://gerardog.github.io/gsudo/docs/credentials-cache>
+
+  ```console
+  gsudo config CacheMode auto
+  ```
+
+- Make gsudo the default sudo command (overwriting windows built in sudo)
+
+  > <https://gerardog.github.io/gsudo/docs/gsudo-vs-sudo#what-if-i-install-both>
+
+  ```console
+  gsudo config PathPrecedence true
+  ```
 
 ### Enable daily update check
 
