@@ -78,7 +78,7 @@ function DailyUpdate {
         Set-ItemProperty -Path HKCU:\Environment -Name LastUpdate -Value $cur_date
     }
 }
-DailyUpdate
+# DailyUpdate
 
 # Update all packages
 function update-all {
