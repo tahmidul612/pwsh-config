@@ -6,6 +6,10 @@ function LoadStep([string] $Description, [ScriptBlock]$script) {
 
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
+if ($env:VSCODE_INJECTION -eq "1") {
+    $env:EDITOR = "code --wait"  # or 'code-insiders' for VS Code Insiders
+}
+
 Write-Host "Loading PowerShell $($PSVersionTable.PSVersion)..." -ForegroundColor 3
 Write-Host
 
