@@ -32,7 +32,7 @@ LoadStep "Terminal-Icons" {
 }
 
 LoadStep "gsudo" {
-    Import-Module gsudoModule
+     Import-Module 'gsudoModule'
 }
 
 LoadStep "Posh Theme" {
