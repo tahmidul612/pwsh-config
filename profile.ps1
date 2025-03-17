@@ -51,25 +51,70 @@ function scoop {
     }
 }
 
-# Function to check winget and scoop for updates
 function update-check {
     $ErrorActionPreference_bak = $ErrorActionPreference
     $ErrorActionPreference = "SilentlyContinue"
-    Write-Host       "Checking for updates..." -ForegroundColor Gray -NoNewline
-    Invoke-Expression "winget update *>&1" -OutVariable winget | Out-Null
+    
+    Write-Host "Checking for updates...`n" -ForegroundColor Gray -NoNewline
+    
+    $wingetOutput = winget upgrade --include-unknown | Out-String
     Invoke-Expression "scoop update *>&1" | Out-Null
-    Invoke-Expression "scoop status *>&1" -OutVariable scoop | Out-Null
-    if (($winget -like "*No installed package found matching input criteria.*") -and ($scoop -like "*Everything is ok!*")) {
+    $scoopStatus = scoop status | Out-String
+    
+    $wingetUpdates = @()
+    $scoopUpdates = @()
+    
+    # Parse Winget output
+    if ($wingetOutput -match "No installed package found matching input criteria") {
+        $wingetUpdates = @()
+    }
+    else {
+        $wingetOutput -split "`r?`n" | ForEach-Object {
+            if ($_ -match "^(\S+)\s+(\S+)\s+->\s+(\S+)") {
+                $wingetUpdates += [PSCustomObject]@{
+                    Package        = $matches[1]
+                    CurrentVersion = $matches[2]
+                    NewVersion     = $matches[3]
+                }
+            }
+        }
+    }
+    
+    # Parse Scoop output
+    if ($scoopStatus -notmatch "Everything is ok!") {
+        $scoopStatus -split "`r?`n" | ForEach-Object {
+            if ($_ -match "^(\S+).*?\((\S+) -> (\S+)\)") {
+                $scoopUpdates += [PSCustomObject]@{
+                    Package        = $matches[1]
+                    CurrentVersion = $matches[2]
+                    NewVersion     = $matches[3]
+                }
+            }
+        }
+    }
+    
+    if ($wingetUpdates.Count -eq 0 -and $scoopUpdates.Count -eq 0) {
         Write-Host "`rNo updates available   " -ForegroundColor Green
     }
     else {
-        Write-Host "`rUpdates available      " -ForegroundColor Yellow
-        Write-Host "Run 'update-all' to update all packages" -ForegroundColor Gray
+        Write-Host "`rUpdates available:" -ForegroundColor Yellow
+        
+        if ($wingetUpdates.Count -gt 0) {
+            Write-Host "`nWinget Updates:" -ForegroundColor Cyan
+            $wingetUpdates | Format-Table -AutoSize
+        }
+        
+        if ($scoopUpdates.Count -gt 0) {
+            Write-Host "`nScoop Updates:" -ForegroundColor Magenta
+            $scoopUpdates | Format-Table -AutoSize
+        }
+        
+        Write-Host "`nRun 'update-all' to update all packages" -ForegroundColor Gray
     }
+    
     $ErrorActionPreference = $ErrorActionPreference_bak
 }
 
-# Run update-check on a daily basis
 function DailyUpdate {
     trap { $last_date = $null }
     Invoke-Expression "(Get-ItemProperty -Path HKCU:\Environment -Name LastUpdate).LastUpdate *>&1" -OutVariable last_date | Out-Null
