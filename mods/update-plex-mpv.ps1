@@ -1,5 +1,5 @@
 param(
-    [switch]$desktop
+    [switch]$desktop=$false
 )
 function Test-Admin {
     $currentUser = [Security.Principal.WindowsIdentity]::GetCurrent()
