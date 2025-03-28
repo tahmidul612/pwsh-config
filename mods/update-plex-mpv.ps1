@@ -1,6 +1,3 @@
-param(
-    [switch]$desktop=$false
-)
 function Test-Admin {
     $currentUser = [Security.Principal.WindowsIdentity]::GetCurrent()
     $principal = New-Object Security.Principal.WindowsPrincipal($currentUser)
@@ -30,12 +27,7 @@ if ($devAsset) {
     $downloadPath = Join-Path $env:TEMP $devAsset.name
     $extractPath = Join-Path $env:TEMP "mpv-extracted"
     $targetDll = "libmpv-2.dll"
-    if ($desktop) {
-        $plexPath = "C:\Program Files\Plex\Plex"
-    }
-    else {
-        $plexPath = "C:\Program Files\Plex\Plex HTPC"
-    }
+    $plexPath = "C:\Program Files\Plex\Plex HTPC"
 
     # Step 4: Download the file
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
