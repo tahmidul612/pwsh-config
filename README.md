@@ -13,6 +13,7 @@
   - [Windows Security Exclusion](#windows-security-exclusion)
   - [Path Substitution Fix](#path-substitution-fix)
   - [Faster Terminal-Icons](#faster-terminal-icons)
+  - [Update Plex mpv](#update-plex-mpv)
 
 <!--start-->
 ## Powershell Preview
@@ -204,4 +205,24 @@ Using `$env:POSH_THEMES_PATH` in the profile.ps1 file may cause a delay in loadi
 > Check <https://github.com/devblackops/Terminal-Icons/issues/76> for more information
 
 The terminal-icons module can take a while to load. This is a guide to modify the module to make it load 3x+ faster
+
+### Update Plex mpv
+
+> [!TIP]
+> You can also follow the guide in my gist [Config Plex](https://gist.github.com/tahmidul612/4e1fdfc60bc39112fdd237cacb26cb56) to configure mpv for plex
+
+Install/update plex htpc from <https://plex.tv>
+
+- To directly run the remote script, run this in powershell
+
+```console
+irm https://raw.github.com/tahmidul612/pwsh-config/raw/master/mods/update-plex-mpv.ps1 | gsudo iex
+```
+
+- If you have the `pwsh-config` repo cloned, you can run the script from the local directory
+
+```console
+gsudo mods/update-plex-mpv.ps1
+```
+
 <!--end-->
