@@ -8,7 +8,7 @@
 Run this command to automatically apply the changes
 
 ```console
-irm https://github.com/tahmidul612/pwsh-config/raw/master/mods/faster-terminal-icons.ps1 | iex
+iex (iwr https://github.com/tahmidul612/pwsh-config/raw/master/mods/faster-terminal-icons.ps1).Content
 ```
 
 ## Manual (Recommended)
