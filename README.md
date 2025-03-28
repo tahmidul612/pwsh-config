@@ -216,7 +216,7 @@ Install/update plex htpc from <https://plex.tv>
 - To directly run the remote script, run this in powershell
 
 ```console
-irm https://raw.github.com/tahmidul612/pwsh-config/raw/master/mods/update-plex-mpv.ps1 | gsudo iex
+irm https://github.com/tahmidul612/pwsh-config/raw/master/mods/update-plex-mpv.ps1 | gsudo iex
 ```
 
 - If you have the `pwsh-config` repo cloned, you can run the script from the local directory
